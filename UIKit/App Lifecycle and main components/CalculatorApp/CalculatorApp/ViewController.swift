@@ -153,10 +153,9 @@ class ViewController: UIViewController {
             currentNumber = numberString
             performingMath = false
         } else {
-            if currentNumber == "0" && numberString != "0" { // Replace "0" if new number is not "0"
+            if currentNumber == "0" && numberString != "0" { 
                 currentNumber = numberString
             } else if currentNumber == "0" && numberString == "0" {
-                // Do nothing if current is "0" and new is "0" to prevent "00"
             } else {
                 currentNumber += numberString
             }
@@ -170,17 +169,15 @@ class ViewController: UIViewController {
         if operationText == "=" {
             calculateResult()
             operation = nil
-            // currentNumber already holds the result for chaining
-            performingMath = true // Result is displayed, next number should start new input
+            performingMath = true
         } else {
-            if currentNumber != "" { // If user just entered a number
+            if currentNumber != "" {
                 previousNumber = currentNumber
                 operation = operationText
                 performingMath = true
-            } else if previousNumber != "" { // If user changes operation after previous calculation
+            } else if previousNumber != "" {
                 operation = operationText
             }
-            // If both currentNumber and previousNumber are empty (e.g., app just launched and user hits +), do nothing.
         }
     }
 
@@ -196,12 +193,10 @@ class ViewController: UIViewController {
     // MARK: - Calculator Logic
 
     private func calculateResult() {
-        // If there's no previous number or current number, or no operation, don't calculate.
         guard let previous = Double(previousNumber),
               let current = Double(currentNumber),
               let op = operation else {
-            // Handle cases where '=' is pressed without enough input
-            if currentNumber != "" { // If only currentNumber exists, show it as result
+            if currentNumber != "" {
                 resultLabel.text = currentNumber
             }
             return
