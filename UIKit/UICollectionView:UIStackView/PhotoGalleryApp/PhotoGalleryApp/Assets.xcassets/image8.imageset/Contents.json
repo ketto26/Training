@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Нина • Визуал • Сторис • Рилс (@ninadanilenkoo) • Instagram photos and videos.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
